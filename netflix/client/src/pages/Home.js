@@ -4,7 +4,7 @@ import Featured from '../components/Featured/featured';
 const Home = () => {
   return <div className="home" >
     <Navbar />
-    <Featured />
+    <Featured type='movie'/>
   </div>;
 };
 
