@@ -1,0 +1,14 @@
+.watch{
+    width: 100w;
+    height: 100vh;
+
+    .back{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top:10px;
+        left: 10px;
+        color:white ;
+        cursor: pointer;
+    }
+}
