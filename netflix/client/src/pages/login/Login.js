@@ -14,6 +14,12 @@ export default function Login() {
         </div>
       </div>
       <div className="container">
+      <form>  
+      <h1> Sign in</h1>
+      <input type='email' placeholder="E-mail or phone number"/>
+      <input type='password' placeholder="password"/>
+
+      </form>
       </div>
     </div>
   );
