@@ -49,7 +49,7 @@ export default function List() {
 
         </div>
         <ArrowForwardIosOutlinedIcon
-          cla7sName="sliderArrow right"
+          className="sliderArrow right"
           onClick={() => handleClick("right")}
         />
       </div>

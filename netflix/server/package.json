@@ -7,13 +7,18 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcrypt-salt": "^1.1.10",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "express-jwt": "^6.1.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.7",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
