@@ -68,6 +68,7 @@ router.post('/login', (req, res, next) => {
 
     const { email, password } = req.body
 
+    console.log(req.body)
     // check if email , password or name are provided as empty string 
 
     if (email === '' || password === '') {
@@ -79,10 +80,29 @@ router.post('/login', (req, res, next) => {
         .then(foundUser => {
             if (!foundUser) {
                 res.status(400).json({ message: 'User not found' });
-                return; 
+                return;
+            }
+
+            const passwordCorrect = bcrypt.compareSync(password, foundUser.password)
+
+            if (passwordCorrect) {
+                const { _id, email, name } = foundUser
+                const payload = { _id, email, name }
+
+                // create JWT
+
+                const authToken = jwt.sign(
+                    payload,
+                    process.env.TOKEN_SECRET,
+                    { algorithm: 'HS256', expiresIn: '48h' }
+                )
+                res.status(200).json({ authToken: authToken })
+
+            }
+            else {
+				res.status(401).json({ message: "Unable to authenticate user" });
             }
         })
-
 
 })
 
